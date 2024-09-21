@@ -139,6 +139,8 @@ MpvObject::~MpvObject()
 }
 
 void MpvObject::initialize_mpv() {
+    mpv_set_option_string(mpv, "config-dir", "/home/const/.config/mpv");
+    mpv_set_option_string(mpv, "config", "yes");
     // terminal=yes brings us all the terminal logs; on windows it's much better with winpty (https://github.com/mpv-player/mpv/blob/master/DOCS/compile-windows.md)
     mpv_set_option_string(mpv, "terminal", "yes");
     mpv_set_option_string(mpv, "msg-level", "all=v");
